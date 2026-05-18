@@ -2,6 +2,7 @@
 
 import * as React from "react"
 
+import { Sparkles } from "lucide-react"
 import type { NamingRequest, NamingResponse, NamingStyle, NamingType } from "@/types/naming"
 import { NamingForm } from "@/components/NamingForm"
 import { NamingResult } from "@/components/NamingResult"
@@ -65,8 +66,16 @@ export function NamingTool() {
       {result ? (
         <NamingResult result={result} />
       ) : (
-        <div className="rounded-2xl border border-dashed border-zinc-300/70 bg-zinc-50 p-8 text-sm text-zinc-600 dark:border-zinc-800/70 dark:bg-zinc-950 dark:text-zinc-300">
-          结果会显示在这里。建议输入尽量明确：动词 + 对象 / 业务名词 + 组件类型。
+        <div className="flex h-full min-h-[400px] flex-col items-center justify-center rounded-lg border border-dashed border-zinc-300 bg-zinc-50/50 px-8 py-16 text-center dark:border-zinc-800 dark:bg-zinc-900/50">
+          <div className="mb-4 rounded-full bg-zinc-100 p-3 dark:bg-zinc-800">
+            <svg className="h-6 w-6 text-zinc-400 dark:text-zinc-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <h3 className="mb-1 text-sm font-medium text-zinc-900 dark:text-zinc-100">暂无结果</h3>
+          <p className="max-w-sm text-sm text-zinc-500 dark:text-zinc-400">
+            请在左侧表单中输入上下文信息并点击生成，您的命名建议将显示在这里。
+          </p>
         </div>
       )}
     </div>
