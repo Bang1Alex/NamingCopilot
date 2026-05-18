@@ -41,7 +41,6 @@ export async function createChatCompletion(args: {
   user: string
 }) {
   const model =  process.env.ARK_MODEL
-  console.log("使用模型11111111：", model)
   if (!model) {
     throw new Error(JSON.stringify({ model }))
   }
